@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="./font/css/open-iconic-bootstrap.min.css">
+    <title>Movie Database</title>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
+                    <img id="logo" class="d-inline-block mr-1" alt="Logo" src="https://image.flaticon.com/icons/png/512/672/672223.png" width="52" height="52"> <span id="site_name">MOVIE DB</span></a>
+                  </a>
+                
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#SignupDialog"><span class="fas fa-user"></span> Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="toLogin"  class="nav-link" href=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-light bg-light">
+               
+              </nav>
+          <h1> <button type="button" class="btn btn-dark" data-toggle="modal" style="margin-left: 20px; margin-bottom: 10px; margin-top: 10px;"  data-target="#MovieFormDialog" id="AddProductButton">Add Movie</button></h1> 
+        </div>
+        <div class="row" id="movieCards">
+          
+            
+
+
+            
+            </div>
+            
+            
+        </div>
+        <footer>Created By X00143906 - Piotr Pych</footer>
+<!-- Bootstrap Modals -->
+        <!-- Sign Up Modal -->
+        <div class="modal fade" id="SignupDialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Signup</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="username" class="form-control" id="usernameToAdd">
+                        </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="passwordToAdd">
+                            </div>
+                    </div>
+                      <!-- Modal footer -->
+                    <div class="modal-footer">
+                            <button onclick="signup()" type="button" class="btn btn-primary" data-dismiss="modal">Signup</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Login Dialog Modal -->
+        <div class="modal fade" id="LoginDialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="username" class="form-control" id="username">
+                        </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="password">
+                            </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                            <button onclick="login()" type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- End Login Modal -->
+
+                <!-- Movie Form Dialog Modal -->
+                <div class="modal fade" id="MovieFormDialog">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+        
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="movieFormTitle">Add or Update a Movie</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+        
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                    <div class="form-group">
+                                            <label for="Title">Title:</label>
+                                            <input type="text" class="form-control" id="movie_title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Movie_description">Description:</label>
+                                            <input type="text" class="form-control" id="movie_description">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="genre">Genre:</label>
+                                            <input type="text" class="form-control" id="genre">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="director">Directed By:</label>
+                                            <input type="text" class="form-control" id="director">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="link_to_poster">Link to poster:</label>
+                                            <input type="text" class="form-control" id="link_to_poster">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="link_to_embed_yt">Link to embed yt trailer:</label>
+                                            <input type="text" class="form-control" id="link_to_embed_yt">
+                                        </div>
+                                        <input type="hidden" id="movie_id" value="0">
+                                        <input type="hidden" id="likes" value="0">
+                                        <input type="hidden" id="dislikes" value="0">
+                            </div>
+        
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                    <button onclick="addOrUpdateMovie()" type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div> 
+
+
+
+    </div>
+    
+    <script src="./js/fetch.js"></script>
+    <script src="./js/user.js"></script>
+    <script src="./js/movies.js"></script>
+
+
+ 
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

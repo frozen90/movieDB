@@ -1,0 +1,59 @@
+.card-img-top {
+    width: 250px;
+    height: 250px;
+ 
+    
+}
+
+.navbar-brand{
+    text-align: center;
+}
+.login_button{
+    font-size: 18px;
+   
+}
+
+
+#site_name{
+    vertical-align: bottom;
+    font-size: 24px;
+    justify-content: end;
+}
+.card{
+    display: inline-block;
+    border: none;
+  
+   
+  
+}
+
+.card-title{
+    font-size: 18px;
+    height: 52px;
+    font-weight: bold;
+    color: white;
+   
+}
+
+.card-text{
+    color:white;
+}
+.card-body{
+    background-color: #343a40;
+    color:white;
+}
+.btn{
+    background-color: white;
+    color: white;
+}
+.movie_row{
+    display: inline-block;
+}
+#dirLine{
+    border:solid;
+    border-bottom: 1px;
+}
+footer{
+    text-align: center;
+}
+
